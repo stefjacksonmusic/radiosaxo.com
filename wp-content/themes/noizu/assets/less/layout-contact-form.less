@@ -1,0 +1,59 @@
+.contact-form-region {
+    margin-bottom: (@baseline * 2);
+
+    form div {
+        background-color: lighten(@color-3, 10%);
+        margin-bottom: 1px;
+        padding: @size * 2;
+
+        label {
+            display: block;
+            line-height: @baseline;
+            font-size: (@font-default-size - 2px);
+            color: lighten(@color-3, 35%);
+            letter-spacing: 1px;
+        }
+
+        input, 
+        textarea {
+            border-width: 0;
+            // padding: @size;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: transparent;
+            border-width: 0;
+            // border-bottom: 1px dashed lighten(@color-3, 15%);
+            color: @color-2;
+            font-size: @font-default-size;
+            font-family: @font-1;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .wpcf7-not-valid-tip {
+            color: @color-4;
+        }
+
+        textarea {
+            max-width: 100%;
+            min-width: 100%;
+            min-height: (@baseline * 4);
+        }
+    }
+
+    .wpcf7-response-output {
+        margin : 0;
+        border-width: 0;
+
+
+        &.wpcf7-validation-errors {
+            background-color: @color-4;
+        }
+    }
+
+    p {
+        text-indent: 0;
+        margin-top: @baseline;
+        margin-bottom: 0;
+    }
+}

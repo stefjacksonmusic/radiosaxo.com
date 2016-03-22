@@ -1,0 +1,366 @@
+#region-home {
+    &.home-boxes {
+        #home-boxes-container {
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            right: 0;
+            height: (@size * 40);
+            overflow: hidden;
+
+            &.home-boxes-1 {
+                li {
+                    width: 100%;
+                }
+            }
+
+            &.home-boxes-2 {
+                li {
+                    width: 50%;
+                }
+            }
+
+            &.home-boxes-3 {
+                li {
+                    width: 33.3333333%;
+                }
+            }
+
+            &.home-boxes-4 {
+                li {
+                    width: 25%;
+                }
+            }
+
+            &.home-boxes-5 {
+                li {
+                    width: 20%;
+                }
+            }
+
+            &.home-boxes-6 {
+                li {
+                    width: 16.6666666%;
+                }
+            }
+
+            li {
+                position: relative;
+                list-style-type: none;
+                float: left;
+                height: 100%;
+                opacity: 0.5;
+                transition: all 0.3s @ease-in-out-circ;
+
+                &:hover {
+                    opacity: 1 !important;
+                    bottom: 0 !important;
+                    .transform(translateZ(0)); 
+                }
+
+                &:last-child .home-boxes-content {
+                    margin-right: 0;
+                }
+
+                &:hover .home-boxes-content {
+                    background-color: @color-4;
+                }
+
+                .home-boxes-content {
+                    position: absolute;
+                    top: 0;
+                    right: 1px;
+                    min-height: 100%;
+                    left: 0;
+                    padding: @baseline;
+                    background-color: darken(@color-3, 10%);
+                    overflow-y: auto;
+                    box-sizing: border-box;
+                    .transition(background-color, 0.2s);
+                    .clearfix();
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: @baseline;
+                        pointer-events: none;
+                    }
+
+                    h5 {
+                        margin-bottom: @baseline;
+                        color: @color-3;
+                        pointer-events: none;
+                    }
+
+                    p {
+                        pointer-events: none;
+                    }
+
+                    .border-button {
+                        border-color: @color-3;
+                        color: @color-3;
+
+                        &:hover {
+                            background-color: @color-3;
+                            color: @color-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #home-claim-container {
+        position: absolute;
+        cursor: default;
+        color: @color-text;
+        .user-select(none);
+
+        &.claim-center {
+            width: 50%;
+            height: 50%;
+
+            #home-claim-content {
+                position: absolute;
+                width: 100%;
+                right: -50%;
+                bottom: -75px;
+                text-align: center;
+            }
+        }
+
+        &.claim-bottom-right {
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            padding: @baseline 0;
+
+            #claim-line {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &.claim-bottom-left {
+            bottom: 0;
+            left: 0;
+            text-align: left;
+            padding: @baseline 0;
+
+            #claim-line {
+                left: 0;
+            }
+        }
+
+        &.claim-top-left {
+            top: @container-padding;
+            left: 0;
+            text-align: left;
+            padding: @baseline 0;
+
+            #claim-line {
+                left: 0;
+            }
+        }
+
+        &.claim-top-right {
+            top: @container-padding;
+            right: 0;
+            text-align: right;
+            padding: @baseline 0;
+
+            #claim-line {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        #claim-line {
+            position: absolute;
+            display: block;
+            content: '';
+            height: 2px;
+            width: 10%;
+            left: 45%;
+            top: -@baseline;
+            background-color: @color-5;
+        }
+
+        #home-claim-line-1 {
+            font-weight: 700;
+            font-size: @baseline * 1.5;
+            line-height: 1em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: @color-1;
+        }
+
+        #home-claim-line-2 {
+            font-weight: 300;
+            font-size: @baseline * 1.25;
+            line-height: @baseline * 1.5;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: @color-1;
+        }
+
+        #home-claim-line-3 {
+            font-weight: 500;
+            font-size: @baseline / 1.5;
+            line-height: @baseline * 1.5;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: @color-5;
+            white-space: nowrap;
+        }
+
+        .button {
+            margin-top: @baseline;
+        }
+    }
+}
+
+.dark-background #region-home #home-claim-container {
+    #home-claim-line-1 {
+        color: @color-2;
+    }
+
+    #home-claim-line-2 {
+        color: @color-2;
+    }
+}
+
+.breakpoint-h2 #home-claim-container {
+    position: relative !important;
+    width: auto !important;
+    height: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: @baseline 0;
+
+    #home-claim-content {
+        position: relative !important;
+        width: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+}
+
+// latest posts
+
+#home-latest-posts {
+    .user-select(none);
+
+    a {
+        text-decoration: none;
+        color: @color-text;
+        display: block;
+        margin-bottom: @size;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            p {
+                color: @color-home-latest-post-title-over;
+            }
+        }
+
+        h6 {
+            color: @color-home-latest-post-date;
+            line-height: (@size * 2.5)
+
+        }
+
+        p {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: @color-home-latest-post-title;
+            line-height: (@size * 2.5);
+            font-size: (@font-default-size - 2px);
+            font-weight: 500;
+            text-indent: 0;
+            .transition(all, 0.2s);
+        }
+    }
+}
+
+.posts-bottom-left #home-latest-posts {
+    position: absolute;
+    bottom: @container-padding;
+    left: 0;
+}
+
+.posts-bottom-right #home-latest-posts {
+    position: absolute;
+    bottom: @container-padding;
+    right: 0;
+    text-align: right;
+}
+
+.posts-top-right #home-latest-posts {
+    position: absolute;
+    top: @container-padding;
+    right: 0;
+    text-align: right;
+}
+
+.posts-top-left #home-latest-posts {
+    position: absolute;
+    top: @container-padding;
+    left: 0;
+}
+
+.dark-background #home-latest-posts a {
+    &:hover {
+        p {
+            color: @color-home-latest-post-title-over;
+        }
+    }
+
+    p {
+        color: @color-home-latest-post-title-dark-background;
+    }
+}
+
+// responsive rules
+
+.breakpoint-h2 #region-home {
+    #home-claim-container {
+        margin: (@baseline * 3) 0;
+    }
+
+    &.home-boxes {
+        #home-boxes-container {
+            height: auto !important;
+            .relativeBox();
+
+            li {
+                float: none;
+                width: auto;
+                height: auto;
+                bottom: auto !important;
+                // opacity: 1 !important;
+
+                .home-boxes-content {
+                    position: relative;
+                    margin-bottom: 1px;
+                }
+            }
+        }
+    }
+}
+
+.breakpoint-h2 .posts-bottom-left #home-latest-posts,
+.breakpoint-h2 .posts-bottom-right #home-latest-posts,
+.breakpoint-h2 .posts-top-left #home-latest-posts,
+.breakpoint-h2 .posts-top-right #home-latest-posts {
+    .relativeBox();
+    text-align: left;
+}

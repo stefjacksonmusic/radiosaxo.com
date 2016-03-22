@@ -1,0 +1,153 @@
+#region-blog {
+    padding-bottom: (@bar-height + @container-padding);
+
+    ul {
+        list-style-type: none;
+
+        li {
+            position: relative;
+            width: 25%;
+            float: left;
+            background-color: darken(@color-1, 5%);
+
+            &.sticky::before {
+                content : 'sticky';
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-transform: uppercase;
+                font-size: 11px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                background-color: @color-4;
+                color: @color-text;
+                padding: 0 @size;
+            }
+
+            &.post-load-more {
+                cursor: pointer;
+                background-color: transparent;
+
+                .post-load-more-content {
+                    padding: @baseline;
+                    text-align: center;
+                    color: @color-4;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 500;
+                    border: 1px solid @color-4;
+                    .user-select(none);
+
+                    &:hover {
+                        background-color: darken(@color-1, 5%);
+                    }
+
+                    &:active {
+                        color: fade(@color-4, 50%);
+                        background-color: fade(darken(@color-1, 5%), 50%);
+                    }
+                }
+            }
+
+            &.post-status {
+                h5 {
+                    margin-bottom: @baseline;
+                }
+
+                p {
+                    padding: @baseline 0 0 @baseline;
+                    border-left: 1px solid fade(white, 10%);
+                }
+            }
+
+            h5 a:hover {
+                color: @color-4
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: @color-2;
+
+                &.border-button {
+                    display: inline-block;
+                    border-color: lighten(@color-1, 10%);
+
+                    &:hover {
+                        border-color: @color-button-default;
+                    }
+                }
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .posts-list-image {
+                position: relative;
+
+                &.image-lightbox::after {
+                    cursor: pointer;
+                }
+
+                &::after {
+                    content : '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    box-shadow: inset 0 0 0 @size fade(black, 15%);
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .post-list-box {
+                position: relative;
+                padding: @baseline;
+
+                &.post-list-box-image,
+                &.post-list-box-video {
+                    &::before {
+                        content : '';
+                        position: absolute;
+                        top: (@size * -2);
+                        left: @baseline;
+                        width: 0; 
+                        height: 0; 
+                        border-left: (@size * 2) solid transparent;
+                        border-right: (@size * 2) solid transparent;
+                        border-bottom: (@size * 2) solid darken(@color-1, 5%);
+                    }
+                }
+
+                &.post-list-box-video::before {
+                    left: 50%;
+                    margin-left: -@size;
+                }
+
+                h5 {
+                    line-height: 1.2em;
+                }
+            }
+
+            .posts-list-meta {
+                margin: @baseline 0;
+                font-size: (@font-default-size - 2px);
+                color: lighten(@color-1, 30%);
+            }
+        }
+    }
+}
+
+.breakpoint-h2 #region-blog {
+    ul {
+        li {
+            width: 100%;
+        }
+    }
+}

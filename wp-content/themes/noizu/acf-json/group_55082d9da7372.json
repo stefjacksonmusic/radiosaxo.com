@@ -1,0 +1,69 @@
+{
+    "key": "group_55082d9da7372",
+    "title": "Page Options",
+    "fields": [
+        {
+            "key": "field_55082dba1b9e1",
+            "label": "Icons Color",
+            "name": "page_icons_bar_color",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "light": "Light",
+                "dark": "Dark"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "light",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_55083ccc097d3",
+            "label": "Featured Image",
+            "name": "page_featured_image",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "display featured image",
+            "default_value": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1426603360
+}

@@ -1,0 +1,32 @@
+.region-posts-list {
+    margin-bottom: (@baseline * 2);
+
+    p {
+        margin-bottom: 0;
+    }
+
+    ul {
+        border-top: 1px solid @color-border;
+
+        li {
+            list-style-type: none;
+            padding: @baseline 0;
+            border-bottom: 1px solid @color-border;
+
+            a h4 {
+                text-decoration: none;
+            }
+
+            h6 {
+                a {
+                    color: @color-text;
+
+                    &:hover {
+                        color: @color-links;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

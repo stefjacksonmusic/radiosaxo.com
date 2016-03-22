@@ -1,0 +1,68 @@
+{
+    "key": "group_55004ac7e69b0",
+    "title": "Collection Setup",
+    "fields": [
+        {
+            "key": "field_55004ad7c4859",
+            "label": "Pages",
+            "name": "collection_pages",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_55004b0a788f5",
+            "label": "Filters & Images",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You can add filters to this page by adding tags to each linked page.\r\nTo display images you must set the featured image to each linked page.",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-collection.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "modified": 1426086809
+}

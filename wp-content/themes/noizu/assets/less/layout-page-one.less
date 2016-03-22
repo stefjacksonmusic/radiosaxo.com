@@ -1,0 +1,112 @@
+#region-page-one {
+    max-width: @page-one-max-width;
+    position: relative;
+    padding-top: @container-padding;
+    margin: 0 auto;
+
+    #page-top {
+        position: relative;
+        .clearfix();
+
+        #share-on {
+            position: absolute;
+            top: 0;
+            right: 0;   
+        }
+    }
+
+    #featured-image{
+        position: relative;
+        max-width: 50%;
+        height: auto;
+        z-index: 4;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            box-shadow: 1px 1px 0 0 fade(black, 25%), 4px 4px 0 0 fade(black, 20%);
+        }
+    }
+
+    h1 {
+        position: absolute;
+        color: @color-4;
+        left: 50%;
+        max-width: 40%;
+        bottom: (@baseline * 5);
+        padding-left: @baseline;
+        z-index: 5;
+
+        &.title-overflow {
+            margin-left: (-@baseline * 3);
+        }
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    #page-content {
+        position: relative;
+        background-color: fade(@color-1, 85%);
+        padding: (@baseline * 6) (@baseline * 4) @baseline;
+        margin: (-@baseline * 4) 0 (@bar-height + @container-padding) (@size * 40);
+        .clearfix();
+
+        #page-content-meta {
+            position: absolute;
+            top: (@baseline - 1);
+            right: @baseline;
+            text-transform: uppercase;
+            border-bottom: 1px solid fade(@color-text, 10%);
+            padding-bottom: @baseline;
+            letter-spacing: 1px;
+
+            p {
+                color: fade(@color-text, 50%);
+                text-indent: none;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+#page-content-overlay {
+    position: fixed;
+    content : '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: (@bar-height + @container-padding * 2);
+    background-color: fade(@color-1, 90%);
+}
+
+.breakpoint-h1 #region-page-one,
+.breakpoint-h2 #region-page-one {
+    #featured-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #page-top #share-on {
+        position: relative;
+        width: 100%;
+        margin-bottom: @baseline;
+    }
+
+    h1.title-overflow {
+        position: relative;
+        margin: @baseline 0;
+        left: auto;
+        max-width: 100%;
+        bottom: auto;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    #page-content {
+        padding: @baseline;
+        margin: 0;
+    }
+}

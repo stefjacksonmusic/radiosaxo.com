@@ -1,0 +1,95 @@
+#share-on {
+    position: relative;
+    cursor: default;
+    z-index: 10;
+    height: @share-on-height;
+    .user-select(none);
+
+    span {
+        display: inline-block;
+        padding: 0 (@size * 2);
+        line-height: @share-on-height;
+        text-transform: uppercase;
+        font-size: (@font-default-size - 3px);
+        letter-spacing: 1px;
+        color: @color-share-on-text;
+        overflow: hidden;
+        height: 100%;
+
+        var {
+            font-style: normal;
+        }
+
+        &#share-on-label {
+            display: block;
+            margin-right: (@share-on-select-width + 1px);
+            background-color: @color-share-on-background;
+            font-weight: 700;
+            padding: 0 0;
+            padding-left: @size;
+            padding-right: @size;
+        }
+
+        &#share-on-select {
+            float: right;
+            background-color: darken(@color-share-on-background, 7%);
+            cursor: pointer;
+            width: @share-on-select-width;
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: darken(@color-share-on-background, 14%);
+            }
+
+            &:active {
+                background-color: darken(@color-share-on-background, 21%);
+            }
+
+            svg {
+                float: right;
+                margin-top: ((@share-on-height - 6px) / 2px);
+                margin-left: (@size * 2);
+
+                * {
+                    fill : fade(@color-share-on-text, 25%);
+                }
+            }
+        }
+    }
+
+    #share-on-options {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding-top: 1px;
+        cursor: pointer;
+
+        div {
+            display: inline-block;
+            padding: 0 (@size * 2);
+            font-size: (@font-default-size - 3px);
+            letter-spacing: 1px;
+            color: @color-share-on-text;
+            line-height: @share-on-height;
+            text-transform: uppercase;
+            clear: right;
+            float:  right;
+            margin-bottom: 1px;
+            width: @share-on-select-width;
+            background-color: darken(@color-share-on-background, 7%);
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: darken(@color-share-on-background, 14%);
+            }
+
+            &:active {
+                background-color: darken(@color-share-on-background, 21%);
+            }
+
+            span {
+                float: left;
+            }
+        }
+    }
+}

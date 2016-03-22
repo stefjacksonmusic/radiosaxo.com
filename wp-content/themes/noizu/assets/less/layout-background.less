@@ -1,0 +1,46 @@
+// background region
+
+#background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    #background-blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0;
+        opacity: 0.25;
+    }
+
+    #background-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @color-background-overlay;
+        z-index: 2;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        z-index: 0;
+
+        &.background-image-over {
+            z-index: 1;
+            opacity: 0;
+        }
+    }
+}

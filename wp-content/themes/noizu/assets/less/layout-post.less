@@ -1,0 +1,214 @@
+#region-post {
+    padding-bottom: (@container-padding + @bar-height + 1px);
+
+    &.region-post-sidebar {
+        .post-container{
+            max-width: 1200px;
+        }
+
+        aside {
+            float: right;
+            width: (300px - @baseline);
+            background-color: darken(@color-1, 5%);
+
+            .post-aside-content {
+                padding: @baseline;
+            }
+        }
+
+        .post-content {
+            margin-right: 300px;
+        }
+    }
+
+    &.post-center .post-container {
+        margin: 0 auto;
+    }
+
+    &.post-right {
+        direction: rtl;
+        text-align: left;
+    }
+
+    .post-container {
+        max-width: 720px;
+    }
+
+    .post-content {
+        background-color: darken(@color-1, 5%);
+        padding: @baseline;
+        margin-bottom: @baseline;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+
+        h1,h2,h3,h4 {
+            margin-bottom: @baseline;
+        }
+    }
+
+    .post-featured-image {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .post-meta {
+        border-bottom: 1px solid @color-1;
+        padding-bottom: @baseline;
+        margin-bottom: @baseline;
+        text-transform: uppercase;
+        font-size: @font-default-size - 2px;
+        letter-spacing: 3px;
+        color: lighten(@color-1, 20%);
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: lighten(@color-1, 20%);
+            border: 1px solid fade(@color-2, 10%);
+            padding: 0 @size;
+
+            &:hover {
+                color: @color-4;
+            }
+
+            &:active {
+                color: fade(lighten(@color-1, 20%), 50%);
+            }
+        }
+    }
+}
+
+.commentlist {
+    li {
+        list-style-type: none;
+
+        > div, > article {
+            margin-bottom: @baseline;
+        }
+
+        .children {
+            margin-left: @baseline;
+        }
+
+        .avatar {
+            float: left;
+        }
+
+        header,
+        .comment-content {
+            margin-left: (@size * 12);
+            border: 1px solid @color-1;
+            padding: @baseline;
+        }
+
+        header {
+            position: relative;
+            border-bottom-width: 0;
+            padding-bottom: 0;
+
+            &::after {
+                position: absolute;
+                content : '';
+                width: 0; 
+                height: 0;
+                top: (@size * 3);
+                left: (-@size - 2px);
+                border-top: @size solid transparent;
+                border-bottom: @size solid transparent; 
+                border-right: @size solid @color-1;
+            }
+
+            .comment-reply-link {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 @size;
+                line-height: @baseline;
+                color: darken(@color-text, 70%);
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: (@font-default-size - 3px);
+                font-weight: 500;
+                letter-spacing: 1px;
+                border: 1px solid @color-1;
+                border-width: 0 0 1px 1px;
+
+                &:hover {
+                    color: @color-text;
+                }
+
+                &:active {
+                    color: darken(@color-text, 85%);
+                }
+            }
+        }
+
+        .comment-content {
+            border-top-width: 0;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.comment-form {
+    p:not(.form-submit) {
+        label {
+            float: left;
+            width: 20%;
+            line-height: (@baseline * 2);
+        }
+
+        input,
+        textarea {
+            border : 1px solid fade(@color-2, 10%);
+            line-height: (@baseline * 2);
+            height: (@baseline * 2);
+            background-color: transparent;
+            padding: 0 @size;
+            font-family: @font-1;
+            font-size: @font-default-size;
+            font-weight: @font-1-default-weight;
+            width: 80%;
+            color: @color-2;
+            box-sizing: border-box;
+
+            &:focus {
+                background-color: fade(@color-2, 5%);
+            }
+        }
+
+        textarea {
+            height: auto;
+        }
+    }
+}
+
+.breakpoint-h2 #region-post {
+    padding-bottom: 0;
+
+    &.region-post-sidebar {
+        .post-container{
+            max-width: 100%;
+        }
+
+        aside {
+            display: none;
+        }
+
+        .post-content {
+            margin-right: 0;
+            margin-bottom: 1px;
+        }
+    }
+}

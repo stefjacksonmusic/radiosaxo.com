@@ -1,0 +1,46 @@
+{
+    "title" : "The Noizu Playlist",
+    "author" : "Mountain Themes",
+    "cover" : "../media/images/noizu_playlist.jpg",
+    "tracks" : [{
+        "name"      : "Intro",
+        "artist"    : "She",
+        "duration"  : "1:01",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/she-intro.mp3"
+    }, {
+        "name"      : "Your First Light My Eventide",
+        "artist"    : "The Echeleon Effect",
+        "duration"  : "5:10",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/the-echelon-effect-your-first-light-my-eventide.mp3"
+    }, {
+        "name"      : "Pluto",
+        "artist"    : "Work Drugs",
+        "duration"  : "3:22",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/work-drugs-pluto.mp3"
+    }, {
+        "name"      : "Kings",
+        "artist"    : "Blackbird Blackbird",
+        "duration"  : "1:17",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/blackbird-blackbird-kings.mp3"
+    }, {
+        "name"      : "Echoes",
+        "artist"    : "Ocean Jet",
+        "duration"  : "3:09",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/ocean-jet-echoes.mp3"
+    }, {
+        "name"      : "Alive",
+        "artist"    : "Overwerk",
+        "duration"  : "4:23",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/overwerk-alive.mp3"
+    }, {
+        "name"      : "Alpha",
+        "artist"    : "LukHash",
+        "duration"  : "3:08",
+        "path"      : "http://demo.mountainthemes.com/music/last_fm_free_mp3/lukhash-alpha.mp3"
+    }, {
+        "name"      : "Gu",
+        "artist"    : "I am waithing for you last summer",
+        "duration"  : "3:09",
+        "path"      : "I-am-waiting-for-you-last-summer-gu.mp3"
+    }]
+}

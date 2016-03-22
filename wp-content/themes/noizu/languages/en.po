@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Noizu\n"
+"POT-Creation-Date: 2015-03-23 15:20+0100\n"
+"PO-Revision-Date: 2015-03-23 15:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: Mountain Themes\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: language-en_us.php:5
+msgid "latest posts"
+msgstr ""
+
+#: language-en_us.php:6
+msgid "read more"
+msgstr ""
+
+#: language-en_us.php:7
+msgid "load more"
+msgstr ""
+
+#: language-en_us.php:8
+msgid "by"
+msgstr ""
+
+#: language-en_us.php:9
+msgid "on"
+msgstr ""
+
+#: language-en_us.php:10
+msgid "all"
+msgstr ""
+
+#: language-en_us.php:11 language-en_us.php:17
+msgid "categories"
+msgstr ""
+
+#: language-en_us.php:12
+msgid "no posts available"
+msgstr ""
+
+#: language-en_us.php:13
+msgid "next posts"
+msgstr ""
+
+#: language-en_us.php:14
+msgid "previous posts"
+msgstr ""
+
+#: language-en_us.php:15
+msgid "page not found"
+msgstr ""
+
+#: language-en_us.php:16
+msgid "the page you have requested is not here"
+msgstr ""
+
+#: language-en_us.php:18
+msgid "this section contains no posts"
+msgstr ""
+
+#: language-en_us.php:19
+msgid "Theme Options"
+msgstr ""
+
+#: language-en_us.php:20
+msgid "General"
+msgstr ""
+
+#: language-en_us.php:21
+msgid "Typography"
+msgstr ""
+
+#: language-en_us.php:22
+msgid "Colors"
+msgstr ""
+
+#: language-en_us.php:23
+msgid "Main Menu"
+msgstr ""
+
+#: language-en_us.php:24
+msgid "share on"
+msgstr ""
+
+#: language-en_us.php:25
+msgid "posted on"
+msgstr ""
+
+#: language-en_us.php:26
+msgid "Off Canvas Sidebar"
+msgstr ""
+
+#: language-en_us.php:27
+msgid "Bar"
+msgstr ""
+
+#: language-en_us.php:28
+msgid "written by"
+msgstr ""
+
+#: language-en_us.php:29
+msgid "Related Posts"
+msgstr ""
+
+#: language-en_us.php:30
+msgid "details"
+msgstr ""

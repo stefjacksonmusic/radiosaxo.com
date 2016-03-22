@@ -1,0 +1,664 @@
+// reset
+
+* {
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// selection
+
+::selection {
+    background-color: @color-selection;
+    color: @color-selection-text;
+}
+
+::-moz-selection {
+    background-color: @color-selection;
+    color: @color-selection-text;
+}
+
+// general styles
+
+svg {
+    display: block;
+    pointer-events: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: @font-1;
+    font-size: @font-default-size;
+    font-weight: @font-1-default-weight;
+    line-height: @baseline;
+    color: @color-text;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: @color-links;
+    .transition(color, 0.1s);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    img {
+        border-width: 0;
+    }
+}
+
+img {
+    display: block;
+
+    &.image-responsive {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+p {
+    margin-bottom: @baseline;
+    // text-indent: @baseline;
+
+    &.no-indent {
+        text-indent: 0;
+    }
+}
+
+blockquote {
+    position: relative;
+    font-size: 1.25em;
+    font-style: italic;
+    line-height: 1.25em;
+    padding-left: @baseline;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content : '"';
+        font-size : 30px;
+        line-height: 1em;
+        opacity: 0.25;
+        width: 20px;
+    }
+}
+
+// headings
+
+h1 {
+    font-family: @font-2;
+    font-size: (@size * 7);
+    font-weight: 300;
+    line-height: 1.25em;
+    color: @color-4;
+}
+
+h2 {
+    font-family: @font-2;
+    font-size: (@size * 6);
+    font-weight: 300;
+    line-height: (@baseline * 2);
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-family: @font-2;
+    font-size: (@size * 4);
+    font-weight: 500;
+    line-height: (@baseline * 2);
+    letter-spacing: 1px;
+}
+
+h4 {
+    font-family: @font-1;
+    font-weight: 500;
+    font-size: @baseline;
+    line-height: @baseline;
+    margin-bottom: @size;
+}
+
+h5 {
+    font-family: @font-2;
+    font-weight: 700;
+    font-size: (@font-default-size - 1px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: @baseline;
+}
+
+h6 {
+    font-family: @font-2;
+    font-weight: 400;
+    font-size: (@font-default-size - 2px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: @baseline;
+}
+
+.page-content,
+.post-content {
+    overflow: hidden;
+
+    ul, ol {
+        margin-left: @baseline;
+        margin-bottom: @baseline;
+    }
+
+    h1,h2,h3,h4,h5,h6,
+    dl, address, pre {
+        margin-bottom: @baseline;
+    }
+
+    ul ol, ul ul, ol ol, ol ul {
+        margin-bottom: 0;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-bottom: @baseline;
+
+        thead {
+            border : 1px solid fade(@color-text, 10%);
+            border-width: 1px 1px 0 1px;
+        }
+
+        tbody {
+            border : 1px solid fade(@color-text, 10%);
+            border-width: 0 1px 1px 1px;
+        }
+
+        th, td {
+            padding: @size;
+            text-align: left;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: @baseline;
+    }
+
+    .aligncenter {
+        margin: 0 auto;
+    }
+
+    .wp-caption {
+        max-width: 100%;
+    }
+
+    .wp-caption-text {
+        border-top: 1px solid fade(@color-text, 10%);
+        padding-top: @baseline;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    .gallery-caption,
+    .bypostauthor {
+        display: block;
+    }
+}
+
+// classes
+
+.ico-button {
+    cursor: pointer;
+
+    &:active {
+        position: relative;
+        opacity: 0.25;
+        bottom: -1px;
+    }
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.alignleft {
+    float: left;
+    margin: 0 @baseline @baseline 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 @baseline @baseline;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.image-preload {
+    visibility: hidden;
+}
+
+.image-lightbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.page-title {
+    margin-top: @size;
+    margin-bottom: @baseline;
+    .clearfix();
+
+    .page-title-content {
+        display: block;
+        float: left;
+        background-color: @color-4;
+        color: @color-2;
+        padding: (@size * 2) @baseline;
+
+        > * {
+            margin-bottom: 0;
+            line-height: 1em;
+
+            &:first-child {
+                margin-bottom: @size;
+            }
+        }
+
+        h5, h6 {
+            color: lighten(@color-4, 20%);
+
+            svg {
+                float: left;
+                height: 1em;
+                max-width: 1em;
+                margin-right: @size;
+
+                * {
+                    fill: lighten(@color-4, 20%);
+                }
+            }
+        }
+    }
+}
+
+.bar-top .page-title {
+    margin-top: @baseline;
+}
+
+.breakpoint-h2 .page-title {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 100%;
+
+    .page-title-content {
+        float: none;
+    }
+}
+
+.button,
+.wpcf7-submit,
+.form-submit input {
+    display: inline-block;
+    border: 2px solid @color-button-default;
+    padding: 1px;
+    min-width: @button-min-width;
+    border-radius: @button-border-radius;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    .user-select(none);
+
+    &.button-lite {
+        border-width: 1px;
+        border-radius: 3px;
+        min-width: 0;
+
+        span {
+            letter-spacing: 2px;
+            padding: 0 @baseline;
+        }
+    }
+
+    &:hover {
+        span {
+            background-color: darken(@color-button-default, 10%);
+        }
+    }
+
+    &:active {
+        span {
+            background-color: darken(@color-button-default, 20%);
+            box-shadow: none;
+        }
+    }
+
+    span {
+        display: block;
+        background-color: @color-button-default;
+        border-radius: (@button-border-radius - 3px);
+        line-height: (@size * 4);
+        text-transform: uppercase;
+        letter-spacing: @button-letter-spacing;
+        font-size: @button-font-size;
+        font-weight: @button-font-weight;
+        color: @color-button-text;
+        white-space: nowrap;
+        .transition(all, 0.1s);
+    }
+}
+
+.form-submit input,
+input.button,
+input.wpcf7-submit {
+    background-color: @color-button-default;
+    color: @color-button-text;
+    padding: @size @baseline;
+    font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    text-transform: uppercase;
+    letter-spacing: @button-letter-spacing;
+
+    &:hover {
+        background-color: darken(@color-button-default, 10%);
+    }
+
+    &:active {
+        background-color: darken(@color-button-default, 20%);
+    }
+}
+
+.border-button {
+    display: inline-block;
+    border : 1px solid @color-button-default;
+    border-radius: 3px;
+    padding: 0 @baseline;
+    text-transform: uppercase;
+    font-size: (@button-font-size);
+    font-weight: @button-font-weight;
+    letter-spacing: 1px;
+    text-decoration: none;
+    .transition(all, 0.2s);
+
+    &:hover {
+        background-color: @color-button-default;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+a.border-button {
+    color: @color-text;
+}
+
+// containers
+
+#wrapper {
+    overflow: hidden;
+    height: 100%;
+}
+
+#container {
+    position: relative;
+    padding: @container-padding;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    &.dark-background {
+        background-color: @color-dark-background;
+    }
+
+    &.full-screen #content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    &.bar-top.full-screen #icons-bar {
+        position: absolute;
+        left: @container-padding;
+        right: @container-padding;
+        bottom: @container-padding;
+    }
+
+    &.bar-bottom.full-screen {
+        #full-screen-content {
+            position: absolute;
+            top: (@container-padding + @icon-bar-height);
+            left: @container-padding;
+            right: @container-padding;
+            bottom: (@bar-height + @container-padding + 1px);
+            overflow: hidden;
+            z-index: 2;
+        }
+    }
+
+    &.bar-top.full-screen {
+        #full-screen-content {
+            position: absolute;
+            bottom: (@container-padding + @icon-bar-height);
+            left: @container-padding;
+            right: @container-padding;
+            top: (@bar-height + @container-padding + 1px);
+            overflow: hidden;
+        }
+    }
+
+    &.bar-bottom {
+        #bar {
+            bottom: @container-padding;
+        }
+
+        #content {
+        }
+    }
+}
+
+.admin-bar #container {
+    padding-top: @container-padding + @admin-bar-height
+}
+
+.admin-bar-mobile .admin-bar #container {
+    padding-top: @container-padding + @admin-bar-mobile-height
+}
+
+.breakpoint-h2 #container #full-screen-content {
+    position: relative !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    overflow: visible;
+}
+
+// content
+
+#content {
+    position: relative;
+    z-index: 2;
+}
+
+.bar-top #content {
+    // padding-top: @bar-height;
+}
+
+.bar-top.full-screen #content {
+    padding-top: 0;
+}
+
+.breakpoint-h2 #container.full-screen #content {
+    overflow: visible !important;
+    .relativeBox();
+}
+
+// icons bar
+
+#icons-bar {
+    position: relative;
+    height: (@icon-bar-height - 1px); // round to 20px for pixel pattern
+    overflow: hidden;
+    z-index: 3;
+
+    #logo {
+        height: 100%;
+        width: auto;
+        float: left;
+        margin-right: @container-padding;
+
+        svg {
+            width: 119px;
+            height: 100%;
+        }
+    }
+
+    a.ico, span.ico { 
+        display: block;
+        height: 100%;
+
+        &.right {
+            margin-left: (@size * 2);
+        }
+
+        &.left {
+            margin-right: (@size * 2);
+        }
+
+        &#ico-loader {
+            display: block;
+            width: 21px;
+            margin: 0 auto;
+
+            svg * {
+                fill : @color-loader;
+            }
+        }
+
+        svg {
+            max-width: 30px;
+            height: @icon-bar-height;
+
+            * {
+                fill : @color-icons-bar;
+            }
+        }
+    }
+}
+
+.bar-top #icons-bar {
+    position: relative;
+    border-top: 1px solid fade(@color-2, 25%);
+
+    #ico-menu {
+        background-color: transparent;
+        border: 1px solid fade(@color-2, 25%);
+        box-sizing: border-box;
+        margin-top: -1px;
+        padding: 0 10px;
+
+        &:hover {
+            background-color: @color-2;
+
+            svg * {
+                fill : @color-4;
+            }
+        }
+
+        svg {
+            * {
+                fill : @color-2;
+            }
+        }
+    }
+}
+
+.bar-top.icons-bar-fill #icons-bar {
+    border-top-color: transparent;
+}
+
+.icons-bar-fill #icons-bar {
+    padding: 0 (@size * 2);
+    background-image: url('data:image/svg+xml;utf8,<svg version="1.1" width="2px" height="2px" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg"><g style="shape-rendering: crispEdges;"><rect x="0" y="0" width="1" height="1" style="fill: #323746; fill-opacity:1"></rect></g></svg>');
+    background-color: fade(@color-3, 25%);
+}
+
+.dark-background #icons-bar {
+    a.ico, span.ico {
+        svg * {
+            fill : @color-icons-bar-dark-background;
+        }
+    }
+}
+
+// region
+
+.region {
+    position: relative;
+
+    &.region-full-screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.breakpoint-h2 .region.region-full-screen {
+    .relativeBox();
+}
+
+.region-page {
+    h4 {
+        color: @color-4;
+        margin-bottom: @baseline;
+    }
+}
+
+// mobile footer
+
+#mobile-footer {
+    position: relative;
+    z-index: 5;
+    display: none;
+    border-top: 1px dotted fade(@color-text, 10%);
+    color: fade(@color-text, 50%);
+    margin-top: @baseline;
+    padding-top: @baseline;
+}
+
+.breakpoint-h2 #mobile-footer {
+    display: block;
+}

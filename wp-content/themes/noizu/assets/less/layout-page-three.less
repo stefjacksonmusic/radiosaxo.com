@@ -1,0 +1,76 @@
+#region-page-three {
+    position: relative;
+    margin-top: 1px;
+    overflow: hidden;
+    .clearfix();
+
+    #page-left {
+        float: left;
+        width: 50%;
+    }
+
+    #page-right {
+        float: right;
+        width: 50%;
+
+        .page-content {
+            margin-left: 1px;
+        }
+    }
+
+    h2 {
+        color: @color-4;
+    }
+
+    .page-content {
+        background-color: fade(@color-3, 90%);
+        padding: (@baseline * 2) (@baseline * 2) 0 (@baseline * 2);
+        .transition(height, 0.2s);
+
+        .page-content-in {
+            margin: 0 auto;
+            max-width: 600px;
+
+            > *:last-child {
+                margin-bottom: 0;
+            }
+
+            .page-content-title {
+                margin-bottom: @baseline;
+            }
+        }
+
+        .content-spacer {
+            height: 0px;
+            overflow: hidden;
+            clear: both;
+        }
+    }
+}
+
+.bar-bottom #region-page-three {
+    .page-content {
+        margin-bottom: (@bar-height + 1px);
+    }
+}
+
+.breakpoint-h2 #region-page-three {
+    #page-left {
+        float: none;
+        width: 100%;
+    }
+
+    #page-right {
+        float: none;
+        width: 100%;
+
+        .page-content {
+            margin-left: 0;
+        }
+    }
+
+    .page-content {
+        padding: @baseline;
+        margin-bottom: 1px;
+    }
+}

@@ -1,0 +1,126 @@
+.region-tracklist {
+    margin-bottom: (@baseline * 2);
+
+    &.region-tracklist-soundcloud {
+        .tracklist-cover {
+            margin-bottom: 1px;
+            background-color: lighten(@color-3, 10%);
+            padding: @baseline;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+
+    .tracklist-cover {
+        margin-bottom: 1px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    iframe {
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        .user-select(none);
+
+        li {
+            line-height: @baseline;
+            margin-bottom: 1px;
+            background-color: lighten(@color-3, 10%);
+            padding: (@baseline / 2) @baseline;
+            font-weight: 500;
+            cursor: pointer;
+            color: @color-2;
+            .transition(background-color, 0.15s);
+
+            &:hover {
+                background-color: @color-4;
+
+                .track-icons {
+                    opacity: 1;
+                }
+            }
+
+            &.selected {
+                background-color: darken(@color-4, 5%);
+            }
+
+            &:active {
+                background-color: darken(@color-4, 10%);
+            }
+
+            &.tracklist-footer {
+                line-height: 1.5em;
+                text-align: center;
+                padding: @size 0;
+                cursor: default;
+                color: lighten(@color-3, 30%);
+
+                a {
+                    color: lighten(@color-3, 40%);                    
+                }
+
+                &:hover {
+                    background-color: lighten(@color-3, 10%);
+                }
+
+                div {
+                    padding-bottom: @size;
+
+                    svg {
+                        margin: 0 auto;
+
+                        * {
+                            fill : @color-3;
+                        }
+                    }
+                }
+            }
+
+            span {
+                opacity: 0.25;
+                display: inline-block;
+                margin-right: @size;
+            }
+
+            .track-icons {
+                float: right;
+                opacity: 0;
+                .transition(opacity, 0.15s, @ease-out-quint, 0.3s); 
+
+                a {
+                    display: block;
+                    float: right;
+                    margin-left: @size;
+
+                    svg {
+                        height: (@baseline * 2);
+
+                        * {
+                            fill : @color-2;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+
+                    &:active {
+                        opacity: 0.25;
+                    }
+                }
+            }
+        }
+    }
+}

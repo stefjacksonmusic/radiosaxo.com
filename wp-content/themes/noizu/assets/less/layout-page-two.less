@@ -1,0 +1,99 @@
+#region-page-two {
+    position: relative;
+    margin-top: 1px;
+
+    #page-sidebar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: fade(@color-page-sidebar-background, 80%);
+        width: @page-sidebar-width;
+        padding: @baseline;
+        overflow-y: auto;
+        .box-sizing(border-box);
+    }
+
+    #page-content {
+        background-color: @color-page-background;
+        margin-right: (@page-sidebar-width + 1px);
+        margin-bottom: (@bar-height + 1px);
+        padding: @baseline;
+
+        h1 {
+            position: relative;
+            color: @color-4;
+            margin: 0 auto @baseline auto;
+            max-width: @page-content-max-width;
+            z-index: 1;
+        }
+
+        #page-featured-area {
+            max-width: @page-featured-max-width;
+            margin: 0 auto @baseline auto;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        #page-content-area {
+            max-width: @page-content-max-width;
+            margin: 0 auto (@baseline * 2);
+            padding: 0 (@baseline * 2);
+        }
+
+        #page-regions {
+            max-width: @page-featured-max-width;
+            margin: 0 auto @baseline auto;
+
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// top bar
+
+.bar-top #region-page-two {
+    #page-content {
+        margin-bottom: 1px;
+    }
+}
+
+// responsive
+
+.breakpoint-h1 #region-page-two {
+    #page-sidebar {
+        padding: @baseline;
+        width: (@page-sidebar-width * 0.7);
+    }
+
+    #page-content {
+        padding: @baseline;
+        margin-right: (@page-sidebar-width * 0.7 + 1px);
+
+        #page-content-area {
+            padding: 0 @baseline;
+        }
+    }
+}
+
+.breakpoint-h2 #region-page-two {
+    #page-sidebar {
+        display: none;
+    }
+
+    #page-content {
+        padding: @baseline;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 1px;
+
+        #page-content-area {
+            padding: 0;
+        }
+    }
+}

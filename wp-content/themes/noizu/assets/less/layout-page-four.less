@@ -1,0 +1,52 @@
+#region-page-four {
+    margin-bottom: (@container-padding + @bar-height);
+    width: 50%;
+    max-width: 960px;
+    .clearfix();
+
+    &.page-center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.page-right {
+        float: right;
+        
+        .page-title {
+            float: right;
+        }
+
+        .page-box {
+            float: right;
+            clear: right;
+        }
+    }
+
+    .page-box {
+        float: left;
+        clear: left;
+        background-color: @color-3;
+        padding: @baseline;
+        margin-bottom: 1px;
+        width: 100%;
+        box-sizing: border-box;
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .region-content .column {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+.breakpoint-h2 #region-page-four {
+    width: 100%;
+    margin-bottom: 0;
+
+    .page-box {
+        float: none;
+        clear: none;
+    }
+}

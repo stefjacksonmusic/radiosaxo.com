@@ -1,0 +1,155 @@
+.region-content {
+
+    .clearfix();
+    margin-left: -(@baseline / 2);
+    margin-right: -(@baseline / 2);
+    margin-bottom: (@baseline * 2);
+
+    .column{
+        margin-bottom: @baseline !important;
+
+        &.column-clear {
+            clear: both;
+        }
+
+        &.column-1 {
+            .column(1);
+        }
+
+        &.column-2 {
+            .column(2);
+        }
+
+        &.column-3 {
+            .column(3);
+        }
+
+        &.column-4 {
+            .column(4);
+        }
+
+        &.column-5 {
+            .column(5);
+        }
+
+        &.column-6 {
+            .column(6);
+        }
+
+        &.column-7 {
+            .column(7);
+        }
+
+        &.column-8 {
+            .column(8);
+        }
+
+        &.column-9 {
+            .column(9);
+        }
+
+        &.column-10 {
+            .column(10);
+        }
+
+        &.column-11 {
+            .column(11);
+        }
+
+        &.column-12 {
+            .column(12);
+        }
+
+        &.column-new-row {
+            clear: left;
+        }
+
+        .column-content{
+            padding: 0 (@baseline / 2);
+
+            h1, h2, h3, h4, h5, h6 {
+                margin-bottom: @baseline;
+                color: @color-6;
+            }
+
+            p,ul,ol,blockquote {
+                margin-bottom: @baseline;
+            }
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.breakpoint-h1 .region-content{
+    .column {
+        &.column-1 {
+            .column(6);
+        }
+
+        &.column-2 {
+            .column(6);
+        }
+
+        &.column-3 {
+            .column(6);
+        }
+
+        &.column-4 {
+            .column(6);
+        }
+
+        &.column-5 {
+            .column(6);
+        }
+
+        &.column-6 {
+            .column(6);
+        }
+
+        &.column-7 {
+            .column(12);
+        }
+
+        &.column-8 {
+            .column(12);
+        }
+
+        &.column-9 {
+            .column(12);
+        }
+
+        &.column-10 {
+            .column(12);
+        }
+
+        &.column-11 {
+            .column(12);
+        }
+
+        &.column-12 {
+            .column(12);
+        }
+    }
+}
+
+.breakpoint-h2 .region-content{
+    .column {
+        &.column-1,
+        &.column-2,
+        &.column-3,
+        &.column-4,
+        &.column-5,
+        &.column-6,
+        &.column-7,
+        &.column-8,
+        &.column-9,
+        &.column-10,
+        &.column-11,
+        &.column-12 {
+            .column(12);
+        }
+    }
+}

@@ -1,0 +1,191 @@
+.widget {
+    padding: 0 0 (@baseline * 2);
+
+    &:last-child {
+        padding-bottom: @baseline;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        opacity: 0.5;
+    }
+
+    h1, h2, h3, h4, h5 {
+        margin-bottom: @size;
+    }
+
+    h5 {
+        color: @color-6;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    nav {
+        font-family: @font-2;
+        font-size: @font-default-size;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: @baseline;
+        margin-right: -@baseline;
+        .user-select(none);
+
+        ul li {
+            height: @baseline;
+            overflow: hidden;
+            padding-right: @baseline;
+            list-style-type: none;
+            border-bottom-width: 0;
+
+            &.current > a,
+            a:hover {
+                color: @color-4;
+
+                &::after {
+                    width: @size;
+                    background-color: lighten(@color-4, 10%);
+                }
+            }
+
+            a:hover {
+                color: lighten(@color-4, 10%);
+            }
+
+            ul {
+
+                li {
+                    padding-right: 0;
+                }
+
+                a {
+                    color: darken(@color-2, 30%);
+                    font-size: (@font-default-size - 3px);
+
+                    &:hover {
+                        color: @color-6;
+                    }
+                }
+            }
+        }
+
+        a {
+            display: block;
+            position: relative;
+            color: @color-2;
+            text-decoration: none;
+            line-height: @baseline;
+            .transition(color, 0.2s);
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 1px;
+                right: -@baseline;
+                top: 0.75em;
+                background-color: transparent;
+                .transition(all, 0.2s);
+            }
+
+            &:active {
+                opacity: 0.75;
+                position: relative;
+                color: darken(@color-4, 20%); 
+                bottom: -1px;
+            }
+        }
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            border-bottom: 1px dotted fade(@color-2, 5%);
+            line-height: (@baseline * 2);
+
+            a {
+                color: @color-text;
+
+                &:hover {
+                    color: @color-4;
+                }
+            }
+        }
+    }
+
+    form {
+        div {
+            border: 1px solid fade(@color-2, 5%);
+            padding: (@size * 2);
+
+            label {
+                display: block;
+                font-family: @font-2;
+                font-size: (@font-default-size - 2px);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                line-height: @baseline;
+                color: fade(@color-2, 20%);
+            }
+
+            input {
+                display: block;
+                border-width: 0;
+                width: 100%;
+                padding: @size 0;
+                background-color: transparent;
+                font-size: @font-default-size;
+                color: @color-6;
+                font-weight: 400;
+            }
+        }
+    }
+
+    #wp-calendar {
+        width: 100%; 
+
+        caption {
+            line-height: (@baseline * 2);
+        }
+
+        td {
+            text-align: center; 
+        }
+
+        th {
+        }
+    }
+
+    .search-form {
+        label {
+            span {
+                display: none;
+            }
+
+            input {
+                border: 1px solid fade(@color-2, 20%);
+                background-color: transparent;
+                padding: @size;
+                color: @color-2;
+                font-size: @font-default-size;
+                line-height: 1em;
+                box-sizing: border-box;
+                width: 100%;
+            }
+        }
+
+        input.search-submit {
+            display: none;
+        }
+    }
+}

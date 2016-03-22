@@ -1,0 +1,224 @@
+#playlist {
+    position: fixed;
+    left: @container-padding;
+    right: @container-padding;
+    z-index: 10;
+    .user-select(none);
+
+    #playlist-container {
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    #playlist-content {
+        position: relative;
+        .clearfix();
+    }
+
+    #playlist-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    #playlist-background-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: fade(@color-1, 75%);
+    }
+
+    #playlist-left {
+        position: relative;
+        float: left;
+        width: 50%;
+        padding: @baseline;
+        box-sizing: border-box;
+
+        #playlist-title,
+        #playlist-author {
+            clear: right;
+            float: right;
+            width: 70%;
+
+        }
+
+        #playlist-author {
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-height: (@baseline * 2);
+            opacity: 0.5;
+        }
+
+        #playlist-title {
+            font-size: (@size * 4);
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1em;
+            color: @color-5;
+        }
+
+        #playlist-cover {
+            clear: right;
+            float: right;
+            display: block;
+            width: 70%;
+            height: auto;
+            margin-bottom: @baseline;
+            box-shadow: 0 0 0 5px fade(black, 10%), 0 0 0 1px fade(black, 5%);
+        }
+    }
+
+    #playlist-right {
+        position: relative;
+        float: right;
+        width: 50%;
+        padding: @baseline;
+        box-sizing: border-box;
+        .transform(translateZ(0)); // fix scroll bug on chrome
+
+        ul {
+            list-style-type: none;
+            width: 70%;
+
+            li {
+                position: relative;
+                border-bottom: 1px solid fade(white, 10%);
+                padding: (@size * 2) 0;
+                cursor: pointer;
+                .clearfix();
+
+                &.selected {
+                    .track-title {
+                        color: @color-4;
+                        font-weight: 700;
+                    }
+                }
+
+                &:first-child {
+                    border-top: 1px solid fade(white, 10%);
+                }
+
+                &:hover {
+                    .track-title {
+                        color: @color-4;
+                    }
+                }
+
+                &:active {
+                    .track-title {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .track-progress {
+                position: absolute;
+                top: -1px;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: @color-5;
+            }
+
+            .track-title {
+                letter-spacing: 1px;
+                font-weight: 500;
+                .transition(color, 0.1s);
+            }
+
+            .track-artist {
+                letter-spacing: 1px;
+                font-weight: 400;
+                opacity: 0.25;
+            }
+
+            .track-duration {
+                font-weight: 500;
+                line-height: (@baseline * 2);
+                margin-left: @baseline;
+                width: 40px;
+                text-align: right; 
+            }
+
+            a {
+                display: block;
+                line-height: (@baseline * 2);
+                float: right;
+                margin-left: @size;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:active {
+                    opacity: 0.25;
+                }
+
+                svg {
+                    display: block;
+                    height: 20px;
+                    width: auto;
+                    margin: 11px 0;
+
+                    * {
+                        fill : @color-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bar-top #playlist {
+    bottom : @container-padding;
+    top: (@bar-height + @container-padding + 1px);
+}
+
+.bar-bottom #playlist {
+    top : @container-padding;
+    bottom: (@bar-height + @container-padding + 1px);
+}
+
+.breakpoint-h1 #playlist {
+    #playlist-right ul,
+    #playlist-left #playlist-cover,
+    #playlist-left #playlist-title, 
+    #playlist-left #playlist-author {
+        width: 90%;
+    }
+}
+
+.breakpoint-h2 #playlist {
+    top: (@container-padding + @bar-height + @icon-bar-height);
+    bottom: 0;
+
+    #playlist-left,
+    #playlist-right {
+        float: none;
+        width: 100%;
+    }
+
+    #playlist-left #playlist-cover,
+    #playlist-left #playlist-title, 
+    #playlist-left #playlist-author {
+        float: none;
+    }
+
+    #playlist-right ul,
+    #playlist-left #playlist-cover,
+    #playlist-left #playlist-title, 
+    #playlist-left #playlist-author {
+        width: 100%;
+    }
+}

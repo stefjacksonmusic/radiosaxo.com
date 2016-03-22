@@ -1,0 +1,120 @@
+.region-events {
+    margin-bottom: (@baseline * 2);
+
+    h3 {
+        margin-bottom: @baseline;
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            background-color: lighten(@color-3, 10%);
+            padding: @baseline;
+            position: relative;
+            margin-bottom: 1px;
+            cursor: default;
+            .transition(background-color, 0.2s);
+            .clearfix();
+
+            &:hover {
+                background-color: lighten(@color-3, 5%);
+            }
+
+            &.next-event {
+                background-color: @color-4;
+
+                .event-button .button {
+                    &:hover span {
+                        background-color: darken(@color-4, 10%);
+                    }
+
+                    &:active span {
+                        background-color: darken(@color-4, 20%);
+                    }
+
+                    span {
+                        color: @color-4;
+                    }
+                }
+            }
+
+            .event-date {
+                float: left;
+                border: 1px solid @color-2;
+                padding: @size;
+                width: (@baseline * 3);
+
+                div {
+                    text-align: center;
+                    font-weight: 300;
+                    font-size: @baseline;
+                    line-height: 1em;
+                }
+            }
+
+            .event-button {
+                position: relative;
+                float: right;
+                width: (@baseline * 6);
+
+                .button {
+                    border-color: @color-2;
+                    float: right;
+                    font-weight: 400;
+
+                    &:hover span {
+                        background-color: @color-3;
+                        color: @color-2;
+                    }
+
+                    &:active span {
+                        background-color: darken(@color-3, 10%);
+                    }
+
+                    span {
+                        background-color: @color-2;
+                        color: @color-3;
+                    }
+                }
+            }
+
+            .event-content {
+                margin: 0 (@baseline * 5) 0 (@baseline * 5);
+
+                h4 {
+                    color: @color-2 !important;
+                    font-weight: 400;
+                }
+
+                p {
+                    margin-bottom: 0;
+                    text-indent: 0;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+.breakpoint-h2 .region-events {
+    ul li {
+        padding: (@size * 2);
+
+        .event-date {
+            float: none;
+            width: (@size * 6);
+
+            div {
+                font-size: (@size * 2);
+                font-weight: 500;
+                
+            }
+        }
+
+        .event-content {
+            clear: both;
+            margin: @baseline 0 0;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+#region-gallery {
+    padding-bottom: (@bar-height + @container-padding);
+
+    ul {
+        list-style-type: none;
+
+        li {
+            position: relative;
+            float: left;
+            cursor: pointer;
+            max-width: 100%;
+            padding: @size;
+            box-sizing: border-box;
+            border: 1px solid fade(@color-2, 10%);
+
+            &:active {
+                opacity: 0.5;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                box-shadow: inset 0 0 0 (@size * 2) fade(black, 20%);
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.backface-visibility(@backface-visibility:hidden){
+    -webkit-backface-visibility: @arguments;
+    -ms-backface-visibility: @arguments;
+    backface-visibility: @arguments;
+}
+
+.box-sizing(@box-sizing:border-box){
+    -moz-box-sizing: @arguments;
+    box-sizing: @arguments;
+}
+
+.perspective(@perspective:500px){
+    -webkit-perspective: @arguments;
+    perspective: @arguments;
+}
+
+.perspective-origin(@origin:50% 50%){
+    -webkit-perspective-origin: @arguments;
+    perspective-origin: @arguments;
+}
+
+.transform(@transform){
+    -webkit-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+.transform-origin(@transform-origin:center center){
+    -webkit-transform-origin: @arguments;
+    transform-origin: @arguments;
+}
+
+.transform-style(@transform-style:preserve-3d){
+    -webkit-transform-style: @arguments;
+    -ms-transform-style: @arguments;
+    transform-style: @arguments;
+}
+
+.transition(@propery:all; @duration:0.25s; @ease:ease; @delay:0s){
+    -webkit-transition: @arguments; // ios6 only
+    transition: @arguments;
+}
+
+.font-smoothing() when (lightness(@color-background) < 50%){
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-smoothing() when (lightness(@color-background) >= 50%){
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.user-select(@user-select:none){
+    -webkit-user-select: @arguments; 
+    -moz-user-select: @arguments; 
+    -ms-user-select: @arguments; 
+    user-select: @arguments;
+}
+
+.appearance(@appearance:none){
+    -webkit-appearance : @appearance;
+    -moz-appearance : @appearance;
+    appearance : @appearance;
+}
+
+.ios-scroll(){
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+}
+
+.relativeBox(){
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+}
